@@ -108,9 +108,9 @@ function App() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
-            Task Master
+            Мастер Задач
           </h1>
-          <p className="text-slate-400 text-lg">Stay organized, get things done</p>
+          <p className="text-slate-400 text-lg">Организуйся, выполняй дела</p>
         </div>
 
         {/* Main Card */}
@@ -123,7 +123,7 @@ function App() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="What needs to be done?"
+                placeholder="Что нужно сделать?"
                 className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
               />
               <button
@@ -132,7 +132,7 @@ function App() {
                 className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 disabled:opacity-50 disabled:cursor-not-allowed text-white rounded-xl px-6 py-3 font-medium transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2"
               >
                 <Plus size={20} />
-                Add
+                Добавить
               </button>
             </div>
           </div>
@@ -141,16 +141,16 @@ function App() {
           {totalCount > 0 && (
             <div className="px-6 py-3 bg-white/5 flex items-center justify-between text-sm">
               <div className="flex gap-4 text-slate-400">
-                <span><span className="text-cyan-400 font-semibold">{totalCount}</span> total</span>
-                <span><span className="text-purple-400 font-semibold">{pendingCount}</span> pending</span>
-                <span><span className="text-pink-400 font-semibold">{completedCount}</span> done</span>
+                <span><span className="text-cyan-400 font-semibold">{totalCount}</span> всего</span>
+                <span><span className="text-purple-400 font-semibold">{pendingCount}</span> в процессе</span>
+                <span><span className="text-pink-400 font-semibold">{completedCount}</span> выполнено</span>
               </div>
               {completedCount > 0 && (
                 <button
                   onClick={clearCompleted}
                   className="text-slate-400 hover:text-pink-400 transition-colors"
                 >
-                  Clear completed
+                  Очистить выполненные
                 </button>
               )}
             </div>
@@ -165,8 +165,8 @@ function App() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <p className="text-slate-400 text-lg">No tasks yet</p>
-                <p className="text-slate-500 text-sm mt-1">Add your first task above to get started</p>
+                <p className="text-slate-400 text-lg">Пока нет задач</p>
+                <p className="text-slate-500 text-sm mt-1">Добавь свою первую задачу выше, чтобы начать</p>
               </div>
             ) : (
               <ul className="divide-y divide-white/5">
@@ -259,9 +259,9 @@ function App() {
           {totalCount > 0 && (
             <div className="px-6 py-4 bg-white/5 border-t border-white/10 text-center text-slate-500 text-sm">
               {pendingCount === 0 ? (
-                <span className="text-green-400">All tasks completed!</span>
+                <span className="text-green-400">Все задачи выполнены!</span>
               ) : (
-                <span>{pendingCount} task{pendingCount !== 1 ? 's' : ''} remaining</span>
+                <span>Осталось {pendingCount} {pendingCount === 1 ? 'задача' : pendingCount < 5 ? 'задачи' : 'задач'}</span>
               )}
             </div>
           )}
@@ -269,7 +269,7 @@ function App() {
 
         {/* Cookie Notice */}
         <p className="text-center text-slate-500 text-xs mt-4">
-          Your tasks are saved locally in cookies
+          Твои задачи сохраняются локально в куках
         </p>
       </div>
     </div>
